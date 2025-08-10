@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Borrow a Book{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Borrow a Book</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="user_id" class="form-label">User ID</label>
+                        <input type="number" class="form-control" id="user_id" name="user_id" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="book_id" class="form-label">Book ID</label>
+                        <input type="number" class="form-control" id="book_id" name="book_id" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Borrow</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
